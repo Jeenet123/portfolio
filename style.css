@@ -285,6 +285,21 @@ img {
                 radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.08), transparent 25%);
 }
 
+#galaxy-bg-container, #particles-js, #particles-skills {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#skills .container,
+#interests .container {
+    position: relative;
+    z-index: 2;
+}
+
 .hero__container {
     display: flex;
     align-items: center;
@@ -293,6 +308,8 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .hero__content {
@@ -315,6 +332,7 @@ img {
     margin-bottom: 0.5rem;
     background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -455,6 +473,7 @@ img {
     color: var(--clr-text-muted);
     font-size: 2rem;
     animation: bounce 2s infinite;
+    z-index: 2;
 }
 
 @keyframes bounce {
@@ -475,6 +494,7 @@ img {
 
 .about__img-wrapper {
     position: relative;
+    max-width: 420px;
 }
 
 .about__img {
@@ -488,6 +508,7 @@ img {
     align-items: center;
     color: var(--clr-primary);
     border: 1px solid var(--clr-border);
+    overflow: hidden;
 }
 
 .about-image-element {
@@ -503,8 +524,8 @@ img {
     right: -20px;
     background: var(--clr-primary);
     color: white;
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -528,11 +549,11 @@ img {
 }
 
 .experience-badge .text {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .about__subtitle {
@@ -544,32 +565,46 @@ img {
 .about__content p {
     color: var(--clr-text-muted);
     margin-bottom: 1.5rem;
+    line-height: 1.7;
 }
 
 .about__info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .info-item {
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+    background-color: var(--clr-bg);
+    border-radius: 10px;
+    border: 1px solid var(--clr-border);
+    transition: var(--transition);
+}
+
+.info-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
 }
 
 .info-label {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--clr-text-muted);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
 }
 
 .info-value {
     font-weight: 600;
     color: var(--clr-text);
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 /* =========================================
@@ -804,6 +839,7 @@ img {
 .hobby-icon-wrapper i {
     background: linear-gradient(135deg, #00f2fe 0%, #10b981 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
 }
@@ -1102,4 +1138,127 @@ textarea.form-input {
     .btn--submit {
         width: 100%;
     }
+}
+
+/* =========================================
+   Hobby 3D Overhaul
+   ========================================= */
+.galaxy-theme {
+    background: radial-gradient(circle at center, #0a0a2a 0%, #111 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================================
+   Hobby Section: Pixel-Perfect Match
+   ========================================= */
+.classic-hobby {
+    background-color: #0b0e14; /* Deep dark background */
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.classic-hobby .section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+.classic-hobby .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: #3b82f6;
+    border-radius: 2px;
+}
+
+#balls-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.classic-hobby .container {
+    position: relative;
+    z-index: 3;
+}
+
+.hobby-card {
+    background: #161b22; /* Specific card color from screenshot */
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 40px 25px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hobby-card:hover {
+    background: #0d1117; /* Darker on hover */
+    border-color: #58a6ff;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.hobby-icon-glow {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #0d1117;
+    border: 3px solid #3b82f6; /* Glowing blue ring */
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+    transition: all 0.3s ease;
+}
+
+.hobby-card:hover .hobby-icon-glow {
+    border-color: #58a6ff;
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.8), inset 0 0 15px rgba(88, 166, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.hobby-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 5px; /* Creates space for the inner glow */
+}
+
+.hobby-card .skill-category__title {
+    color: #ffffff;
+    font-size: 1.15rem !important;
+    margin-bottom: 20px;
+    font-weight: 700;
+    border: none;
+    padding: 0;
+    letter-spacing: 0.5px;
+}
+
+.hobby-card .project-desc {
+    color: #8b949e;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 0 5px;
 }

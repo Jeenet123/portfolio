@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="light-mode">
+<body class="dark-mode">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -31,8 +31,8 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-                    <i class="fa-solid fa-moon"></i>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Light Mode">
+                    <i class="fa-solid fa-sun"></i>
                 </button>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -46,6 +46,8 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero section">
+            <!-- Particles Context -->
+            <div id="particles-js"></div>
             <div class="hero__container">
                 <div class="hero__content reveal">
                     <span class="hero__greeting">Hello, I'm</span>
@@ -54,8 +56,10 @@
                         <span class="typing-text">Software Engineer</span>
                     </h2>
                     <p class="hero__description">
-                        With 4 years of experience building scalable, robust backend services and microservices using
-                        Java, Spring Boot, and Kafka. Experienced in telecom and banking domains.
+                        Results-driven Software Engineer with 4 years of experience in Java development, microservices,
+                        and database management. Skilled in building scalable solutions with Spring Boot, Apache Camel,
+                        and integrating APIs. Proficient in using Kafka, Redis, and Docker to optimize performance and
+                        streamline deployments across telecom and banking domains.
                     </p>
                     <div class="hero__buttons">
                         <a href="#projects" class="btn btn--primary">View My Work</a>
@@ -85,7 +89,7 @@
                 <div class="about__grid">
                     <div class="about__img-wrapper reveal">
                         <div class="about__img">
-                             <img src="about-image.jpg" alt="Software Engineering Concept" class="about-image-element">
+                            <img src="about-image.jpg" alt="Software Engineering Concept" class="about-image-element">
                         </div>
                         <div class="experience-badge">
                             <span class="years">4+</span>
@@ -93,29 +97,32 @@
                         </div>
                     </div>
                     <div class="about__content reveal" style="transition-delay: 200ms;">
-                        <h3 class="about__subtitle">Dedicated Java Developer creating seamless experiences</h3>
-                        <p>I possess a strong foundation in Java development and maintaining databases, with a proven
-                            track record of developing scalable and efficient software solutions.</p>
-                        <p>With 4 years of experience, I specialize in the telecom and banking domains, delivering
-                            tailored, industry-specific solutions utilizing integration tools like Kafka and Redis
-                            caching.</p>
+                        <h3 class="about__subtitle">Results-driven Software Engineer</h3>
+                        <p>4 years of experience building scalable microservices with Spring Boot and Apache Camel.
+                            Proficient in Java, Kafka, Redis, Docker, and working with MySQL, PostgreSQL & Couchbase
+                            databases. Focused on delivering efficient, industry-specific solutions in telecom and
+                            banking domains.</p>
 
                         <div class="about__info-grid">
                             <div class="info-item">
-                                <span class="info-label">Role</span>
+                                <span class="info-label"><i class="fa-solid fa-briefcase"
+                                        style="margin-right: 6px; color: var(--clr-primary);"></i>Role</span>
                                 <span class="info-value">Software Engineer</span>
                             </div>
                             <div class="info-item">
-                                <span class="info-label">Experience</span>
-                                <span class="info-value">4 Years</span>
+                                <span class="info-label"><i class="fa-solid fa-calendar"
+                                        style="margin-right: 6px; color: var(--clr-primary);"></i>Experience</span>
+                                <span class="info-value">4 Years (Jun 2022 – Present)</span>
                             </div>
                             <div class="info-item">
-                                <span class="info-label">Focus</span>
-                                <span class="info-value">Microservices & APIs</span>
+                                <span class="info-label"><i class="fa-solid fa-building"
+                                        style="margin-right: 6px; color: var(--clr-primary);"></i>Company</span>
+                                <span class="info-value">Seqato Software Solutions Pvt Ltd</span>
                             </div>
                             <div class="info-item">
-                                <span class="info-label">Education</span>
-                                <span class="info-value">BCA, Computer Science</span>
+                                <span class="info-label"><i class="fa-solid fa-graduation-cap"
+                                        style="margin-right: 6px; color: var(--clr-primary);"></i>Education</span>
+                                <span class="info-value">BCA – Navajyothi College, Kannur University</span>
                             </div>
                         </div>
                         <a href="#contact" class="btn btn--primary mt-4">Let's Talk</a>
@@ -126,64 +133,98 @@
 
         <!-- Skills Section -->
         <section id="skills" class="skills section">
+            <!-- Particles Context for Skills -->
+            <div id="particles-skills"></div>
             <div class="container">
                 <h2 class="section-title reveal">Technical Skills</h2>
                 <p class="section-subtitle reveal">Technologies and tools I work with on a daily basis.</p>
 
                 <div class="skills__grid">
-                    <!-- Java / Core -->
+                    <!-- Core / Frameworks -->
                     <div class="skill-category reveal">
                         <h3 class="skill-category__title">Core / Frameworks</h3>
                         <div class="skill-items">
                             <div class="skill-box">
                                 <i class="fa-brands fa-java skill-icon" style="color: #f89820;"></i>
-                                <span class="skill-name">Java Coding</span>
+                                <span class="skill-name">Java</span>
                             </div>
                             <div class="skill-box">
                                 <i class="fa-solid fa-leaf skill-icon" style="color: #6db33f;"></i>
-                                <span class="skill-name">Spring Boot & Cloud</span>
+                                <span class="skill-name">Spring Boot</span>
                             </div>
                             <div class="skill-box">
                                 <i class="fa-solid fa-cubes-stacked skill-icon" style="color: #8b0000;"></i>
-                                <span class="skill-name">Hibernate & Spring JPA</span>
+                                <span class="skill-name">Hibernate</span>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fa-solid fa-database skill-icon" style="color: #336791;"></i>
+                                <span class="skill-name">JPA</span>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fa-solid fa-route skill-icon" style="color: #e8702a;"></i>
+                                <span class="skill-name">Apache Camel</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Databases -->
+                    <!-- Databases & Messaging -->
                     <div class="skill-category reveal" style="transition-delay: 100ms;">
-                        <h3 class="skill-category__title">Databases & Integration</h3>
+                        <h3 class="skill-category__title">Databases & Messaging</h3>
                         <div class="skill-items">
                             <div class="skill-box">
-                                <i class="fa-solid fa-database skill-icon" style="color: #336791;"></i>
-                                <span class="skill-name">SQL & Couchbase</span>
+                                <i class="fa-solid fa-database skill-icon" style="color: #00758f;"></i>
+                                <span class="skill-name">MySQL</span>
                             </div>
                             <div class="skill-box">
-                                <i class="fa-solid fa-chart-line skill-icon" style="color: #ea2328;"></i>
+                                <i class="fa-solid fa-database skill-icon" style="color: #336791;"></i>
+                                <span class="skill-name">PostgreSQL</span>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fa-solid fa-database skill-icon" style="color: #ea2328;"></i>
+                                <span class="skill-name">Couchbase</span>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fa-solid fa-bolt skill-icon" style="color: #231f20;"></i>
                                 <span class="skill-name">Apache Kafka</span>
                             </div>
                             <div class="skill-box">
-                                <i class="fa-brands fa-aws skill-icon" style="color: #ff9900;"></i>
-                                <span class="skill-name">AWS</span>
+                                <i class="fa-solid fa-envelope skill-icon" style="color: #d6382d;"></i>
+                                <span class="skill-name">ActiveMQ</span>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fa-solid fa-memory skill-icon" style="color: #dc382d;"></i>
+                                <span class="skill-name">Redis</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tools / DevOps -->
+                    <!-- Tools & DevOps -->
                     <div class="skill-category reveal" style="transition-delay: 200ms;">
                         <h3 class="skill-category__title">Architecture & Tools</h3>
                         <div class="skill-items">
                             <div class="skill-box">
                                 <i class="fa-solid fa-network-wired skill-icon" style="color: #00c7b7;"></i>
-                                <span class="skill-name">REST APIs & Microservices</span>
+                                <span class="skill-name">REST APIs</span>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fa-solid fa-cubes skill-icon" style="color: #1a8cff;"></i>
+                                <span class="skill-name">Micro-Services</span>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fa-brands fa-docker skill-icon" style="color: #2496ed;"></i>
+                                <span class="skill-name">Docker</span>
                             </div>
                             <div class="skill-box">
                                 <i class="fa-brands fa-git-alt skill-icon" style="color: #f34f29;"></i>
-                                <span class="skill-name">Git (GitLab/GitHub)</span>
+                                <span class="skill-name">Git</span>
                             </div>
                             <div class="skill-box">
-                                <i class="fa-solid fa-code skill-icon" style="color: #2496ed;"></i>
-                                <span class="skill-name">FTL (FreeMarker)</span>
+                                <i class="fa-solid fa-diagram-project skill-icon" style="color: #0052cc;"></i>
+                                <span class="skill-name">Jira</span>
+                            </div>
+                            <div class="skill-box">
+                                <i class="fa-solid fa-code skill-icon" style="color: #4a90d9;"></i>
+                                <span class="skill-name">SQL</span>
                             </div>
                         </div>
                     </div>
@@ -204,7 +245,7 @@
                 </div>
 
                 <div class="projects__grid">
-                    <!-- Project 1 -->
+                    <!-- Partner Portal -->
                     <div class="project-card reveal mix telecom" data-category="telecom">
                         <div class="project-img">
                             <div class="project-overlay">
@@ -217,19 +258,18 @@
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Telecom Domain Solutions</h3>
-                            <p class="project-desc">Developed scalable microservices using Spring Boot framework
-                                tailored to telecom industry regulations, ensuring reliable data flow using Kafka
-                                messaging.</p>
-                            <ul class="project-tech">
-                                <li>Spring Boot</li>
-                                <li>Kafka</li>
-                                <li>Microservices</li>
-                            </ul>
+                            <h3 class="project-title">Partner Portal</h3>
+                            <p class="project-desc">A telecom domain project focused on integrating and managing
+                                communication channels like WhatsApp, SMS, Email, and Instagram. Developed microservices
+                                using Apache Camel, enabling seamless communication via Kafka and REST APIs. Designed
+                                and
+                                implemented APIs tailored to each communication channel, ensuring efficient message
+                                delivery and response handling. Stored API response statuses in a database for tracking
+                                and analysis, while utilizing Redis for caching to enhance performance.</p>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
+                    <!-- Banking Portal -->
                     <div class="project-card reveal mix banking" data-category="banking"
                         style="transition-delay: 100ms;">
                         <div class="project-img">
@@ -243,18 +283,16 @@
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Banking Integration Systems</h3>
-                            <p class="project-desc">Implemented secure APIs, debugged Java applications, and cached data
-                                retrieval using Redis to optimize system performance for banking operations.</p>
-                            <ul class="project-tech">
-                                <li>Java</li>
-                                <li>Redis</li>
-                                <li>REST APIs</li>
-                            </ul>
+                            <h3 class="project-title">Banking Portal</h3>
+                            <p class="project-desc">Worked on a banking domain project involving secure API development,
+                                comprehensive debugging of Java applications, and integration of Kafka and Redis.
+                                Optimized API performance by reducing data processing time by 40%. Deployed
+                                microservices to servers using Docker, enhancing scalability and consistency across
+                                different environments.</p>
                         </div>
                     </div>
 
-                    <!-- Project 3 -->
+                    <!-- DevOps & Deployment -->
                     <div class="project-card reveal mix telecom banking" data-category="telecom"
                         style="transition-delay: 200ms;">
                         <div class="project-img">
@@ -268,15 +306,12 @@
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Cloud Deployment & Architecture</h3>
-                            <p class="project-desc">Managed API architecture via Postman and deployed microservices to
-                                servers, ensuring seamless integration and smooth execution for varied client domains.
-                            </p>
-                            <ul class="project-tech">
-                                <li>AWS</li>
-                                <li>Postman</li>
-                                <li>Deployment</li>
-                            </ul>
+                            <h3 class="project-title">Deployment & Client Collaboration</h3>
+                            <p class="project-desc">Deployed microservices to servers and optimized deployment pipelines
+                                using Docker, enhancing scalability and consistency across different environments.
+                                Collaborated closely with clients to gather requirements, deliver customized solutions,
+                                and conducted regular demos and presentations to showcase progress and incorporate
+                                feedback.</p>
                         </div>
                     </div>
                 </div>
@@ -287,8 +322,6 @@
         <section id="interests" class="interests section">
             <div class="container">
                 <h2 class="section-title reveal">Interests & Hobbies</h2>
-                <p class="section-subtitle reveal">What I love doing outside of the tech world.</p>
-
                 <div class="skills__grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
                     <!-- Table Tennis -->
                     <div class="skill-category reveal text-center">
@@ -296,7 +329,8 @@
                             <img src="tt.jpg" alt="Table Tennis" class="hobby-img">
                         </div>
                         <h3 class="skill-category__title mt-3" style="border: none; padding: 0;">Table Tennis</h3>
-                        <p class="project-desc">Developing quick reflexes and strategic thinking through competitive play.</p>
+                        <p class="project-desc">Developing quick reflexes and strategic thinking through competitive
+                            play.</p>
                     </div>
 
                     <!-- Carroms -->
@@ -314,7 +348,8 @@
                             <img src="dance.png" alt="Dance" class="hobby-img">
                         </div>
                         <h3 class="skill-category__title mt-3" style="border: none; padding: 0;">Dance</h3>
-                        <p class="project-desc">Passionate member of the Jalwa dance group, staying active and expressing creativity.</p>
+                        <p class="project-desc">Passionate member of the Jalwa dance group, staying active and
+                            expressing creativity.</p>
                     </div>
 
                     <!-- Cricket -->
@@ -323,7 +358,8 @@
                             <img src="cricket.png" alt="Cricket" class="hobby-img">
                         </div>
                         <h3 class="skill-category__title mt-3" style="border: none; padding: 0;">Cricket</h3>
-                        <p class="project-desc">Passionate about cricket, blending teamwork, fast reflexes, and sportsmanship.</p>
+                        <p class="project-desc">Passionate about cricket, blending teamwork, fast reflexes, and
+                            sportsmanship.</p>
                     </div>
                 </div>
             </div>
@@ -342,7 +378,7 @@
                             <div class="contact__icon"><i class="fa-solid fa-location-dot"></i></div>
                             <div>
                                 <h4 class="contact__item-title">Location</h4>
-                                <p class="contact__item-text">Kannur, India</p>
+                                <p class="contact__item-text">Kannur, Kerala, 670511</p>
                             </div>
                         </div>
                         <div class="contact__item">
@@ -390,10 +426,12 @@
                 <a href="#" class="footer__social"><i class="fa-brands fa-github"></i></a>
                 <a href="#" class="footer__social"><i class="fa-brands fa-linkedin"></i></a>
             </div>
-            <p class="footer__copyright">&copy; <span id="year"></span> DevPort. All rights reserved.</p>
+            <p class="footer__copyright">&copy; <span id="year"></span> Jeenet K J. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>

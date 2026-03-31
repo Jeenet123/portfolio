@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check for saved theme preference in localStorage
     const savedTheme = localStorage.getItem('portfolio-theme');
     
-    // Apply saved theme or default to light mode
-    if (savedTheme === 'dark') {
-        document.body.classList.replace('light-mode', 'dark-mode');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    // Apply saved theme or default to dark mode
+    if (savedTheme === 'light') {
+        document.body.classList.replace('dark-mode', 'light-mode');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
     }
 
     themeToggleBtn.addEventListener('click', () => {
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
        Typing Effect for Hero Banner
        ========================================= */
     const typingText = document.querySelector('.typing-text');
-    const roles = ['Software Engineer', 'Java Developer', 'Microservices Expert', 'Backend Developer'];
+    const roles = ['Software Engineer', 'Java Developer', 'Microservices Expert', 'Apache Camel Developer', 'API Integration Specialist'];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -209,4 +209,180 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         });
     }
+
+    /* =========================================
+       Particles.js Initialization
+       ========================================= */
+    if (typeof particlesJS !== 'undefined') {
+
+        // Hero: blue connected network (nodes & lines)
+        const heroConfig = {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#3b82f6" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": {
+                    "enable": true, "distance": 150,
+                    "color": "#3b82f6", "opacity": 0.4, "width": 1
+                },
+                "move": {
+                    "enable": true, "speed": 2, "direction": "none",
+                    "random": false, "straight": false, "out_mode": "out", "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        };
+
+        // Skills: blue & black bubble particles — glowing circles, no lines, bubble hover
+        const skillsConfig = {
+            "particles": {
+                "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": ["#3b82f6", "#1e3a5f", "#60a5fa"] },
+                "shape": { "type": "circle" },
+                "opacity": {
+                    "value": 0.7, "random": true,
+                    "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false }
+                },
+                "size": {
+                    "value": 8, "random": true,
+                    "anim": { "enable": true, "speed": 2, "size_min": 2, "sync": false }
+                },
+                "line_linked": { "enable": false },
+                "move": {
+                    "enable": true, "speed": 1.2, "direction": "none",
+                    "random": true, "straight": false, "out_mode": "out", "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "bubble" },
+                    "onclick": { "enable": true, "mode": "repulse" },
+                    "resize": true
+                },
+                "modes": {
+                    "bubble": { "distance": 200, "size": 20, "duration": 2, "opacity": 1, "speed": 3 },
+                    "repulse": { "distance": 180, "duration": 0.4 }
+                }
+            },
+            "retina_detect": true
+        };
+
+        if (document.getElementById('particles-js')) {
+            particlesJS('particles-js', heroConfig);
+        }
+        if (document.getElementById('particles-skills')) {
+            particlesJS('particles-skills', skillsConfig);
+        }
+    }
+
+/* =========================================
+   Classic Hobby: Dropping Balls Animation
+   ========================================= */
+const initBallDrop = () => {
+    const container = document.getElementById('balls-bg-container');
+    if (!container) return;
+
+    const canvas = document.createElement('canvas');
+    container.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+
+    let w, h, balls = [];
+    const ballCount = 40;
+
+    const resize = () => {
+        w = canvas.width = container.offsetWidth;
+        h = canvas.height = container.offsetHeight;
+    };
+
+    class Ball {
+        constructor() {
+            this.init();
+        }
+
+        init() {
+            this.r = Math.random() * 10 + 5;
+            this.x = Math.random() * w;
+            this.y = -Math.random() * h;
+            this.vy = Math.random() * 2 + 1;
+            this.vx = (Math.random() - 0.5) * 1;
+            this.gravity = 0.15;
+            this.friction = 0.8;
+            this.opacity = Math.random() * 0.5 + 0.3;
+        }
+
+        update() {
+            this.vy += this.gravity;
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.y + this.r > h) {
+                this.y = h - this.r;
+                this.vy *= -this.friction;
+                
+                // Add some horizontal dispersion on bounce
+                this.vx += (Math.random() - 0.5) * 2;
+            }
+
+            if (this.x + this.r > w || this.x - this.r < 0) {
+                this.vx *= -1;
+            }
+
+            // Reset if out of bounds or stopped
+            if (this.y < -h * 2) this.init(); 
+        }
+
+        draw() {
+            const gradient = ctx.createRadialGradient(
+                this.x - this.r * 0.3, this.y - this.r * 0.3, this.r * 0.1,
+                this.x, this.y, this.r
+            );
+            gradient.addColorStop(0, `rgba(255, 255, 255, ${this.opacity + 0.2})`);
+            gradient.addColorStop(1, `rgba(200, 200, 200, ${this.opacity})`);
+
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
+
+    const createBalls = () => {
+        balls = [];
+        for (let i = 0; i < ballCount; i++) {
+            balls.push(new Ball());
+        }
+    };
+
+    const animate = () => {
+        ctx.clearRect(0, 0, w, h);
+        balls.forEach(ball => {
+            ball.update();
+            ball.draw();
+        });
+        requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('resize', resize);
+    resize();
+    createBalls();
+    animate();
+};
+
+initBallDrop();
 });
